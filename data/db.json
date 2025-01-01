@@ -296,10 +296,18 @@
       }
     },
     {
-      "userId": 1,
       "id": "10",
       "title": "optio molestias id quia eum",
-      "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+      "body": "testing...",
+      "userId": 1,
+      "date": "2024-12-31T12:38:07.957Z",
+      "reactions": {
+        "thumbsUp": 9,
+        "wow": 0,
+        "heart": 9,
+        "rocket": 0,
+        "coffee": 4
+      }
     },
     {
       "userId": 2,
@@ -836,25 +844,32 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     },
     {
-      "title": "Hello",
-      "body": "Hey",
+      "id": "102",
+      "title": "Checking",
+      "body": "check one two three",
+      "userId": 2,
+      "date": "2022-04-26T23:03:52.299Z"
+    },
+    {
+      "id": "0a43",
+      "title": "Ismail",
+      "body": "Mirza",
       "userId": 1,
-      "date": "2022-04-13T21:43:05.630Z",
+      "date": "2024-12-31T15:22:40.213Z",
       "reactions": {
         "thumbsUp": 0,
         "wow": 0,
         "heart": 0,
         "rocket": 0,
         "coffee": 0
-      },
-      "id": "101"
+      }
     },
     {
-      "id": "102",
-      "title": "Checking",
-      "body": "check one two three",
-      "userId": 2,
-      "date": "2022-04-26T23:03:52.299Z"
+      "id": "ef1a",
+      "title": "5th Posts",
+      "body": "wowww",
+      "userId": 5,
+      "date": "2025-01-01T11:20:49.641Z"
     }
   ]
 }
