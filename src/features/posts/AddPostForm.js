@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useGetUsersQuery } from "../users/usersSlice";
+import { selectAllUsers, useGetUsersQuery } from "../users/usersSlice";
 import { useNavigate } from "react-router-dom";
 import { useAddNewPostMutation } from "./postsSlice";
 
@@ -12,7 +12,9 @@ const AddPostForm = () => {
   const [content, setContent] = useState("");
   const [userId, setUserId] = useState("");
 
-  const { data: users, isSuccess } = useGetUsersQuery("getUsers");
+  /* const { data: users, isSuccess } = useGetUsersQuery("getUsers"); */
+
+  const users = useSelector((state) => selectAllUsers(state));
 
   const navigate = useNavigate();
 
@@ -37,14 +39,21 @@ const AddPostForm = () => {
     }
   };
 
-  let usersOptions;
-  if (isSuccess) {
+  /* let usersOptions;
+  if (isSuccessUsers) {
     usersOptions = users.ids.map((id) => (
       <option key={id} value={id}>
         {users.entities[id].name}
       </option>
     ));
-  }
+  } */
+
+  let usersOptions;
+  usersOptions = users.map((user) => (
+    <option key={user.id} value={user.id}>
+      {user.name}
+    </option>
+  ));
 
   return (
     <section>

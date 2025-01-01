@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { useGetUsersQuery } from "./usersSlice";
 import { Link, useParams } from "react-router-dom";
 import { useGetPostsByUserIdQuery } from "../posts/postsSlice";
@@ -36,6 +35,7 @@ const UserPage = () => {
     content = <p>Loading...</p>;
   } else if (isSuccess || isUserSuccess) {
     const { ids, entities } = postsForUser;
+
     content = ids.map((id) => (
       <li key={id}>
         <Link to={`/post/${id}`}>{entities[id].title}</Link>

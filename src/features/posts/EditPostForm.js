@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useGetUsersQuery } from "../users/usersSlice";
+import { selectAllUsers, useGetUsersQuery } from "../users/usersSlice";
 import {
   useGetPostsQuery,
   useUpdatePostMutation,
   useDeletePostMutation,
 } from "./postsSlice";
+import { useSelector } from "react-redux";
 
 const EditPostForm = () => {
   const { postId } = useParams();
@@ -26,8 +27,11 @@ const EditPostForm = () => {
       isSuccess,
     }),
   });
-  const { data: users, isSuccess: isSuccessUsers } =
-    useGetUsersQuery("getUsers");
+
+  /* const { data: users, isSuccess: isSuccessUsers } =
+    useGetUsersQuery("getUsers"); */
+
+  const users = useSelector((state) => selectAllUsers(state));
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -77,14 +81,21 @@ const EditPostForm = () => {
     }
   };
 
-  let usersOptions;
+  /*   let usersOptions;
   if (isSuccessUsers) {
     usersOptions = users.ids.map((id) => (
       <option key={id} value={id}>
         {users.entities[id].name}
       </option>
     ));
-  }
+  } */
+
+  let usersOptions;
+  usersOptions = users.map((user) => (
+    <option value={user.id} key={user.id}>
+      {user.name}
+    </option>
+  ));
 
   const onDeletePostClicked = async () => {
     try {
